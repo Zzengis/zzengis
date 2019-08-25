@@ -14,7 +14,9 @@ Vagrant.configure("2") do |config|
 				vbk.cpus = 2
 		end
 		#настройка двух интерфейсов
+		#сеть для атаки
 		kali_config.vm.network "private_network", ip: "10.30.30.1", netmask: "255.255.255.0", virtualbox__intnet: "crash"
+		#внутренняя сеть для доступа
 		kali_config.vm.network "private_network", ip: "10.20.20.1", netmask: "255.255.255.0"
   	end
 
