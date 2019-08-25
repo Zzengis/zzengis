@@ -14,7 +14,7 @@ Vagrant.configure("2") do |config|
 				vbk.cpus = 2
 		end
 		#настройка двух интерфейсов
-		kali_config.vm.network "private_network", ip: "10.30.30.1", netmask: "255.255.255.0"
+		kali_config.vm.network "private_network", ip: "10.30.30.1", netmask: "255.255.255.0", virtualbox__intnet: "crash"
 		kali_config.vm.network "private_network", ip: "10.20.20.1", netmask: "255.255.255.0"
   	end
 
@@ -28,7 +28,7 @@ Vagrant.configure("2") do |config|
                 vbc.memory = "2048"
                 vbc.cpus = 2
         end
-		centos_config.vm.network "private_network", ip: "10.30.30.2" , netmask: "255.255.255.0"
+		centos_config.vm.network "private_network", ip: "10.30.30.2" , netmask: "255.255.255.0", virtualbox__intnet: "crash"
 		centos_config.vm.network "private_network", ip: "10.20.20.2" , netmask: "255.255.255.0"
 
 	end
